@@ -17,3 +17,18 @@ self.create_widgets()
         style.configure('TLabel', background='#f0f0f0', font=('Helvetica', 12))
         style.configure('TButton', background='#4CAF50', foreground='#fff', font=('Helvetica', 12), padding=5)
 
+ # Frame for questions
+        question_frame = ttk.Frame(self)
+        question_frame.pack(pady=10)
+
+        # Question 1
+        question1_label = ttk.Label(question_frame, text="How often do you share code?")
+        question1_label.grid(row=0, column=0, padx=10, pady=5, sticky='w')
+
+        self.question1_var = tk.StringVar(self)
+        self.question1_var.set("Select")
+        self.question1_options = ["Rarely", "Sometimes", "Often", "Always"]
+        question1_dropdown = ttk.Combobox(question_frame, textvariable=self.question1_var,
+                                          values=self.question1_options, state="readonly", width=15)
+        question1_dropdown.grid(row=0, column=1, padx=10, pady=5, sticky='w')
+
