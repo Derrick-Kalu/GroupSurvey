@@ -31,4 +31,13 @@ self.create_widgets()
         question1_dropdown = ttk.Combobox(question_frame, textvariable=self.question1_var,
                                           values=self.question1_options, state="readonly", width=15)
         question1_dropdown.grid(row=0, column=1, padx=10, pady=5, sticky='w')
+ # Question 2
+        question2_label = ttk.Label(question_frame, text="Where do you usually share code? (Select up to 5)")
+        question2_label.grid(row=1, column=0, padx=10, pady=5, sticky='w')
 
+        self.question2_vars = []
+        for i, option in enumerate(["GitHub", "Stack Overflow", "Personal Blog", "Social Media", "Other"]):
+            var = tk.IntVar()
+            checkbox = ttk.Checkbutton(question_frame, text=option, variable=var, style='TCheckbutton')
+            checkbox.grid(row=i + 1, column=1, padx=10, pady=2, sticky='w')
+            self.question2_vars.append(var)
