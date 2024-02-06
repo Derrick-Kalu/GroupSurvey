@@ -9,3 +9,11 @@ class SurveyApp(tk.Tk):
         self.title("CODE SHARING SURVEY")
         self.geometry("400x300")
         self.configure(bg= "whitesmoke")
+self.create_widgets()
+    def create_widgets(self):
+        # Style
+        style = ttk.Style(self)
+        style.configure('TFrame', background='#f0f0f0')
+        style.configure('TLabel', background='#f0f0f0', font=('Helvetica', 12))
+        style.configure('TButton', background='#4CAF50', foreground='#fff', font=('Helvetica', 12), padding=5)
+
