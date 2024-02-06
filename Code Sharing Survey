@@ -21,6 +21,18 @@ self.create_widgets()
         question_frame = ttk.Frame(self)
         question_frame.pack(pady=10)
 
+    # Submit button
+        submit_button = ttk.Button(self, text="Submit", command=self.submit_survey)
+        submit_button.pack(pady=10)
+
+
+    def submit_survey(self):
+        # Process survey responses
+        answer1 = self.question1_var.get()
+        answer2 = [option for var, option in
+                   zip(self.question2_vars, ["GitHub", "Stack Overflow", "Personal Blog", "Social Media", "Other"]) if
+                   var.get() == 1]
+
         # Question 1
         question1_label = ttk.Label(question_frame, text="How often do you share code?")
         question1_label.grid(row=0, column=0, padx=10, pady=5, sticky='w')
