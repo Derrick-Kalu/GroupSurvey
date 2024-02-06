@@ -53,3 +53,12 @@ self.create_widgets()
             checkbox = ttk.Checkbutton(question_frame, text=option, variable=var, style='TCheckbutton')
             checkbox.grid(row=i + 1, column=1, padx=10, pady=2, sticky='w')
             self.question2_vars.append(var)
+# Display a message box with the survey responses
+        messagebox.showinfo("Survey Submitted", f"Thank you for participating!\n\n"
+                                                f"Response to Question 1: {answer1}\n"
+                                                f"Response to Question 2: {', '.join(answer2)}")
+
+
+if __name__ == "__main__":
+    app = SurveyApp()
+    app.mainloop()
